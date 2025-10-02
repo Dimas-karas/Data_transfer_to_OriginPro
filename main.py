@@ -70,4 +70,6 @@ files_to_process = filedialog.askopenfilenames(filetypes=[('Corrtest files (*.co
                                                           ('All files', '*.*')],
                                                title='Choose files to process')
 
+assert len(files_to_process) > 0, "There are no selected files to process"
+
 move_data_to_origin(files_to_process)
