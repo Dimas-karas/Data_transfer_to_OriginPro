@@ -2,6 +2,10 @@ from urllib.parse import parse_qsl
 import numpy as np
 
 
+class WrongArgumentsError(Exception):
+    pass
+
+
 def integrate(x=None, y=None, h=None):
     result = [0.] * len(y)
     if h:
@@ -28,7 +32,7 @@ class Data:
                      {'name': 'y_example',
                       'values': [2, 4, 6, 8, 10],
                       'comment': 'example_comment',
-                      'type': 'X'}]
+                      'type': 'Y'}]
 
     def __str__(self):
         return str({'exp_type': self.exp_type,
